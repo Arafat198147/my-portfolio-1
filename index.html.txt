@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Arafat Hasan | Premium Digital Business Platform</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'Inter', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: '#d4af37',
+                        luxuryGray: '#1e293b',
+                        darkBg: '#090d16',
+                        accentBlue: '#3a86ff',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #05070c;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(15, 22, 36, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.15);
+            transform: translateY(-6px);
+        }
+        /* Custom Scrolling & Animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05070c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+            border: 2px solid #05070c;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        /* Gradient Text */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #fff 30%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Cinematic Glow Line */
+        .glow-line {
+            position: relative;
+        }
+        .glow-line::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+        }
+        /* Roadmap Styling */
+        .roadmap-step {
+            position: relative;
+        }
+        .roadmap-step::after {
+            content: '↓';
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #d4af37;
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        @media (min-width: 1024px) {
+            .roadmap-step::after {
+                content: '→';
+                right: -24px;
+                bottom: auto;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .roadmap-step:last-child::after {
+                display: none;
+            }
+        }
+        /* Modal Animation */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <div id="cinematic-intro" class="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center p-6 text-center transition-opacity duration-1000 ease-in-out">
+        <div class="max-w-3xl space-y-8 animate-pulse" style="animation-duration: 3s;">
+            <div class="relative w-36 h-36 mx-auto rounded-full p-1 bg-gradient-to-b from-gold/50 to-transparent">
+                <div class="w-full h-full rounded-full bg-black overflow-hidden border border-white/5">
+                    <img id="intro-avatar" src="" alt="HM Arafat Hasan" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h2 class="text-3xl font-bold tracking-widest text-white uppercase font-english">HM Arafat Hasan</h2>
+                <p class="text-sm tracking-wider text-gold font-english font-medium">Business Growth Strategist • Digital Consultant • Creative Designer</p>
+            </div>
+            <div class="w-24 h-[1px] bg-gold/30 mx-auto my-4"></div>
+            <p class="text-slate-400 text-base italic leading-relaxed max-w-xl mx-auto">
+                "Every successful business begins with a clear vision, the right strategy, and consistent execution."
+            </p>
+        </div>
+    </div>
+
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <header class="fixed top-0 left-0 w-full z-50 bg-[#05070c]/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <a href="#" class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
+                    <span class="text-gold font-english font-extrabold text-2xl">A.</span>
+                    <span class="font-english tracking-widest text-sm text-slate-300 uppercase">Arafat Hasan</span>
+                </a>
+                
+                <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-medium text-slate-400">
+                    <a href="#home" class="hover:text-gold transition-colors">হোম</a>
+                    <a href="#about" class="hover:text-gold transition-colors">মিশন</a>
+                    <a href="#services" class="hover:text-gold transition-colors">সার্ভিসসমূহ</a>
+                    <a href="#roadmap" class="hover:text-gold transition-colors">রোডম্যাপ</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors">পোর্টফোলিও</a>
+                    <a href="#blog" class="hover:text-gold transition-colors">ব্লগ</a>
+                    <a href="#free-resources" class="hover:text-gold transition-colors text-gold">ফ্রি রিসোর্স</a>
+                    <a href="#contact" class="bg-gold hover:bg-white text-black px-5 py-2.5 rounded-full transition-all duration-300 font-semibold tracking-normal lowercase first-letter:uppercase">যোগাযোগ</a>
+                </nav>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none text-xl">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#05070c]/95 backdrop-blur-lg border-b border-white/5 px-6 py-6 space-y-4 shadow-xl">
+                <a href="#home" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">হোম</a>
+                <a href="#about" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">মিশন</a>
+                <a href="#services" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">সার্ভিসসমূহ</a>
+                <a href="#roadmap" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">রোডম্যাপ</a>
+                <a href="#portfolio" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">পোর্টফোলিও</a>
+                <a href="#blog" class="block text-slate-300 hover:text-gold transition-colors py-2 text-sm">ব্লগ</a>
+                <a href="#free-resources" class="block text-gold hover:text-gold transition-colors py-2 text-sm">ফ্রি রিসোর্স</a>
+                <a href="#contact" class="block bg-gold text-center text-black px-4 py-2.5 rounded-full font-semibold text-sm">যোগাযোগ করুন</a>
+            </div>
+        </header>
+
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8 py-16">
+                <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-xs uppercase tracking-widest text-slate-400 px-4 py-1.5 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Premium Digital Business Platform
+                </span>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto font-english">
+                    Helping Entrepreneurs Build <span class="gold-text-gradient">Brands</span> That People Remember.
+                </h1>
+                
+                <p class="text-slate-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+                    আমি ছোট ব্যবসা, স্টার্টআপ এবং ব্যক্তিগত ব্র্যান্ডকে আধুনিক ডিজিটাল কৌশল, কনটেন্ট, ডিজাইন ও অটোমেশনের মাধ্যমে আরও পেশাদার, বিশ্বাসযোগ্য এবং লাভজনক করে তুলতে কাজ করি।
+                </p>
+                
+                <div class="flex flex-wrap gap-4 justify-center pt-6">
+                    <a href="#services" class="bg-gold hover:bg-white text-black px-8 py-4 rounded-full font-semibold shadow-lg shadow-gold/10 transition-all duration-300 hover:-translate-y-0.5">
+                        Explore My Services <i class="fa-solid fa-arrow-right-long ml-2 text-sm"></i>
+                    </a>
+                    <a href="#contact" class="bg-slate-900/80 hover:bg-slate-900 text-white border border-white/5 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 backdrop-blur-sm">
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 border-t border-white/5 bg-[#080b12]/50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 flex justify-center reveal-left">
+                        <div class="relative w-64 h-80 rounded-2xl p-[1px] bg-gradient-to-b from-white/10 via-gold/20 to-transparent">
+                            <div class="w-full h-full rounded-2xl bg-[#090d16] overflow-hidden relative">
+                                <img id="about-avatar" src="" alt="HM Arafat Hasan" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 space-y-6 reveal-right">
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">OUR MISSION</span>
+                        <h2 class="text-3xl font-extrabold text-white leading-snug">সঠিক পরিকল্পনা ও প্রযুক্তির মেলবন্ধন</h2>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            "আমি বিশ্বাস করি, একটি ছোট ব্যবসার সফল হতে বড় বাজেটের প্রয়োজন নেই। প্রয়োজন সঠিক পরিকল্পনা, সৃজনশীলতা, ধারাবাহিকতা এবং প্রযুক্তির সঠিক ব্যবহার।"
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            এই প্ল্যাটফর্মের মাধ্যমে আমি উদ্যোক্তা, ছোট ব্যবসা এবং স্টার্টআপদের জন্য এমন বাস্তবসম্মত সমাধান প্রদান করি, যা তাদের ব্যবসাকে ধাপে ধাপে আরও পেশাদার, লাভজনক এবং দীর্ঘমেয়াদে সফল হতে সাহায্য করে।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">What I Do</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">ব্যবসায়িক রূপান্তরের প্রয়োজনীয় সেবাসমূহ</h2>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-24 border-t border-white/5 bg-[#080b12]/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">Your Journey</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">Business Growth Roadmap</h2>
+                    <p class="text-slate-400 text-sm mt-2">একটি সফল ব্র্যান্ডে রূপান্তরের পরিকল্পিত ধাপসমূহ</p>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-8 gap-y-12 gap-x-4 text-center items-start" id="roadmap-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-24 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">Our Work</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">সাম্প্রতিক সফল প্রজেক্টসমূহ</h2>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" id="portfolio-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-24 border-t border-white/5 bg-[#080b12]/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">Knowledge Hub</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">ব্লগ ও ব্যবসা শিক্ষা</h2>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="free-resources" class="py-24 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">Exclusive Vault</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">ফ্রি বিজনেস মেটেরিয়ালস</h2>
+                    <p class="text-slate-400 text-sm mt-2">ব্যবসায় গতি আনার জন্য আপনার প্রয়োজনীয় চেকলিস্ট ও টেমপ্লেট সংগ্রহ করুন</p>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="resources-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 border-t border-white/5 bg-[#080b12]/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold font-english">Let's Connect</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">আপনার প্রজেক্ট শুরু করুন</h2>
+                    <div class="w-12 h-[1px] bg-gold/50 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                    <div class="space-y-8 flex flex-col justify-center reveal-left">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-white">সরাসরি যুক্ত হোন আমার সাথে</h3>
+                            <p class="text-slate-400 text-base leading-relaxed">
+                                আপনার আইডিয়া বা চলমান ব্যবসার সমস্যা নিয়ে আলোচনা করতে নিচের যেকোনো যোগাযোগ মাধ্যমে মেসেজ করতে পারেন।
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="contact-channels">
+                            </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-8 relative reveal-right">
+                        <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-gold"></i> মেসেজ পাঠান (গুগল শিটে ডেটা জমা হবে)
+                        </h4>
+                        <form id="contact-form" class="space-y-5">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-slate-400 mb-2 font-english">Full Name</label>
+                                <input type="text" id="form-name" required class="w-full bg-[#05070c] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-gold transition-colors text-sm" placeholder="এখানে নাম লিখুন">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-slate-400 mb-2 font-english">Phone Number</label>
+                                    <input type="tel" id="form-phone" required class="w-full bg-[#05070c] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-gold transition-colors text-sm" placeholder="ফোন নম্বর">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-slate-400 mb-2 font-english">Email Address</label>
+                                    <input type="email" id="form-email" required class="w-full bg-[#05070c] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-gold transition-colors text-sm" placeholder="ইমেইল আইডি">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-slate-400 mb-2 font-english">Message / Requirement</label>
+                                <textarea id="form-message" rows="4" required class="w-full bg-[#05070c] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-gold transition-colors text-sm" placeholder="আপনার প্রজেক্ট বা আইডিয়ার বিস্তারিত লিখুন..."></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn" class="w-full bg-gold hover:bg-white text-black font-semibold py-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>মেসেজ সাবমিট করুন</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-black border-t border-white/5 py-16 text-sm text-slate-500">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="space-y-4">
+                    <a href="#" class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
+                        <span class="text-gold font-english font-extrabold text-2xl">A.</span>
+                        <span class="font-english tracking-widest text-sm text-slate-300 uppercase">Arafat Hasan</span>
+                    </a>
+                    <p class="text-xs leading-relaxed text-slate-600 max-w-xs">
+                         From Vision to Reality — Helping Businesses Build Strong Brands, Better Systems, and Lasting Growth.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">সেবা সমূহ</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-gold transition-colors">Business Growth Strategy</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Business Automation</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Branding & Identity</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">দ্রুত লিংক</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-gold transition-colors">আমাদের মিশন</a></li>
+                        <li><a href="#portfolio" class="hover:text-gold transition-colors">পোর্টফোলিও</a></li>
+                        <li><a href="#blog" class="hover:text-gold transition-colors">ব্লগ ও নলেজ</a></li>
+                        <li><a href="#free-resources" class="hover:text-gold transition-colors">ফ্রি রিসোর্স</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">লিগ্যাল</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5 pt-8 text-center text-xs flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© ২০২৬ HM Arafat Hasan. সর্বস্বত্ব সংরক্ষিত।</p>
+                <p class="text-slate-700">Design Concept: Luxury Minimal Edition</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="service-modal" class="modal opacity-0 pointer-events-none fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6">
+        <div class="modal-overlay absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        
+        <div class="glass-card max-w-2xl w-full rounded-2xl relative z-10 overflow-hidden shadow-2xl transition-all transform scale-95 duration-300">
+            <div class="p-6 border-b border-white/5 flex items-center justify-between">
+                <h3 id="modal-title" class="text-xl font-bold text-white"></h3>
+                <button id="close-modal-btn" class="text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 space-y-4">
+                <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+                <div id="modal-details" class="text-slate-400 text-xs space-y-2 bg-[#05070c]/60 p-4 rounded-xl border border-white/5">
+                    </div>
+            </div>
+            <div class="p-4 bg-[#05070c]/40 border-t border-white/5 flex justify-end">
+                <a href="#contact" id="modal-cta-btn" class="bg-gold hover:bg-white text-black font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">আলোচনা শুরু করুন</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog-modal" class="modal opacity-0 pointer-events-none fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6">
+        <div class="blog-modal-overlay absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        
+        <div class="glass-card max-w-2xl w-full rounded-2xl relative z-10 overflow-hidden shadow-2xl transition-all transform scale-95 duration-300 max-h-[85vh] flex flex-col">
+            <div class="p-6 border-b border-white/5 flex items-center justify-between">
+                <h3 id="blog-modal-title" class="text-xl font-bold text-white"></h3>
+                <button id="close-blog-modal-btn" class="text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="blog-modal-body" class="p-6 space-y-4 overflow-y-auto text-slate-300 text-sm leading-relaxed flex-grow">
+                </div>
+            <div class="p-4 bg-[#05070c]/40 border-t border-white/5 flex justify-end">
+                <button id="close-blog-modal-footer-btn" class="bg-gold hover:bg-white text-black font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const CONFIG = {
+            profile: {
+                name: "HM Arafat Hasan",
+                email: "workhasan751@gmail.com",
+                whatsapp: "+8801918322307", 
+                facebookUrl: "https://www.facebook.com/mdarafathasan.official", 
+                messengerUrl: "https://m.me/mdarafathasan.official", 
+                avatar: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlwOC7cnuiJNirOmydJT4e7sy2MtmAgR6XPE2Zslst3F5REiwGw7i7-igJS2IYlA97dee-y9VzSqN_SFlGkj1Afs-lAiIqMtDwuCT7P6nrUfWvtLr9YOgObHKXA5J09mqFsXapDJAzbVmRcJGhm4rowCki40b6vQPlhO0rqDjrm_-0fci8FKG76vU9Y7lT/s1600/Gemini_Generated_Image_fb1b60fb1b60fb1b-Picsart-AiImageEnhancer.png"
+            },
+            services: [
+                {
+                    title: "Business Automation",
+                    subtitle: "খরচ ছাড়াই ব্যবসার সমাধান",
+                    icon: "fa-solid fa-laptop-code",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLoh-9bd3XBYidNcvJrnG8m9VoR5CewMRvCnW29s_MHhTdUSPXVq5PuPt98CXMU8OJlbzhhNP1H3GsnC_pmfli4JydSza2nwR69hFWMT5k6YrOUwdJYNt6Efxt099ub60TzNkW27uuZuFkMbQ9JMmMs2kddKew02v_fUMwQLVZFM2KpYSaa5Dwxe9Qf6fG/s1600/5.1.1.webp",
+                    desc: "Google Sheets এবং Excel ব্যবহার করে জটিল হিসেব ও ডেটা ট্র্যাকিং স্বয়ংক্রিয় করার দীর্ঘদিনের দক্ষতা।",
+                    longDesc: "একটি ব্যবসাকে বড় করতে প্রফেশনাল ডাটা এবং হিসেব রক্ষা অত্যন্ত প্রয়োজনীয়। আমরা প্রিমিয়াম বা পেইড সফটওয়্যার ছাড়া একদম বিনামূল্যে গুগল শিটস (Google Sheets) এবং এক্সেল (Excel) ব্যবহার করে আপনার ডেলিভারি ট্র্যাকিং, অ্যাকাউন্টস, স্টক এবং কাস্টমার ডাটাবেজ এমনভাবে অটোমেটেড করে দেব যেখানে আপনার সময় এবং অতিরিক্ত খরচ দুটিই বেঁচে যাবে।",
+                    features: ["রিয়েল-টাইম হিসাব ট্র্যাকিং", "ফ্রি কাস্টম শিট ডাটাবেজ", "অটোমেটেড ইনভয়েস সিস্টেম"]
+                },
+                {
+                    title: "Business Growth Strategy",
+                    subtitle: "পরিকল্পিত গ্রোথ সリューション",
+                    icon: "fa-solid fa-chart-line",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipBqDjY9CInsNcMgMFRLdwHzIcgxZH8nDdMtzc4ZAD9Yt-njDMN1Eenf4-0ZyDh3i1qKQIzaonuKcJ3nxOXWVGCU8RLbTVqP8yHZWzRRwewwKHrTya-lKDR-Bm4a_YQVjsjwlOfZqvH5AixSkssEx3aQODLJmiifz-YTgRh7J25qwsCoVivGkyRtC9JaV5/s1600/5.1.1.webp",
+                    desc: "ছোট ব্যবসাকে বড় ব্র্যান্ড করার এবং প্রতিযোগীদের ছাড়িয়ে যাওয়ার বাস্তবসম্মত রণকৌশল।",
+                    longDesc: "আমরা আপনার ব্যবসার লক্ষ্য, কাস্টমার এবং প্রোডাক্ট বিশ্লেষণ করে একটি পূর্ণাঙ্গ গ্রোথ রোডম্যাপ তৈরি করে দেব। এটি আপনার বিজনেসের দীর্ঘমেয়াদী ব্র্যান্ডিং এবং সঠিক মার্কেট পজিশনিং নিশ্চিত করবে।",
+                    features: ["মার্কেট রিসার্চ", "কম্পিটিটর অ্যানালিসিস", "৩/৬ মাসের গ্রোথ ক্যালেন্ডার"]
+                },
+                {
+                    title: "Branding & Identity",
+                    subtitle: "প্রিমিয়াম ব্র্যান্ড লুক",
+                    icon: "fa-solid fa-chess-queen",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLdXBU_uvDgMxVoQbGhmilx5tg8QU96EBZKJPYGZ3GV4e2O_Sfie5S40Wrg7sAE5z8yo3y-vJfHFMQ2tVLWqT4tx_AuLJ1QZFpRder_2kS2u4RsEqcGfTih41IYvHH8MI6WKVcx7pPcj_EGvTW1q-cSyaIGNpZbmTWGZZh4hspwrNPlBltcii3I08vSBsh/s1600/5.1.1.webp",
+                    desc: "লোগো, কালার প্যালেট ও কালচার ডিজাইনের মাধ্যমে প্রথম দেখাতেই একটি রাজকীয় প্রিমিয়াম ফিল তৈরি করা।",
+                    longDesc: "একটি ব্র্যান্ডের ভিজ্যুয়াল আইডেন্টিটি কাস্টমারের মনে প্রথম পারসেপশন তৈরি করে। আমরা আপনার ব্যবসার থিম এবং ফিল অনুযায়ী আকর্ষণীয় কালার প্যালেট, ইউনিক লোগো এবং ডিজিটাল প্রেজেন্টেশন ডিজাইন করব যা কাস্টমারের কাছে বিশ্বাসযোগ্যতা বাড়াবে।",
+                    features: ["ইউনিক লোগো কনসেপ্ট", "কালার প্যালেট ও টাইপোগ্রাফি", "ব্র্যান্ড গাইডবুক"]
+                },
+                {
+                    title: "Content & Digital Marketing",
+                    subtitle: "কার্যকর মার্কেটিং ফানেল",
+                    icon: "fa-solid fa-bullseye",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc-6v9Nxt_UAZnUJWirQMgfUrxxxt93ORgTS3Rsoz5K_wUNagB3JOOkfJnpCQBc0B7CtHl4o_jY3AMaqorLkj-NG7IGKHL6bPakgh2KZXAeEbfjLs-VqR7EBmIz9t4uQiPvP27UuG3qc76ZT3sk7rGF4HqSTl3sn9XMVlCb1CpZK0mCczWwbSPEv8Y1iNV/s1600/5.1.1.webp",
+                    desc: " can-কনভার্ট করতে সাহায্যকারী কনটেন্ট স্ট্র্যাটেজি এবং কার্যকরী ফানেল ডিজাইন।",
+                    longDesc: "আমরা এমন কনটেন্ট ও সামাজিক যোগাযোগ মাধ্যম মার্কেটিং প্ল্যান করি যা কাস্টমারকে আপনার ব্র্যান্ডের সাথে রিলেট করতে শেখায়। সঠিক অ্যাড ফানেল এবং আকর্ষণীয় কপিরাইটিংয়ের সমন্বয়ে সরাসরি ওয়েবসাইটে ট্রাফিক নিয়ে আসার পরিকল্পনা দেওয়া হবে।",
+                    features: ["সেলস ফানেল ডিজাইন", "সোশ্যাল মিডিয়া কন্টেন্ট ক্যালেন্ডার", "কপিরাইটিং গাইডলাইন"]
+                },
+                {
+                    title: "CRM & Trust Building",
+                    subtitle: "গ্রাহক সন্তুষ্টি ও ধরে রাখা",
+                    icon: "fa-solid fa-handshake",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAAxGdLxfYPlW5YGdHGhLNEmuiRhoUAAjzZJDmnZXV77rp6vOhfnJKkyXobbwYa_6sSHQb9aOnzDaK_RvALl0JC25Sb2B6VyIQXKAP_ESSY2-VAp5RT33PGEneGpYsco5qPJontwFgSa2uEwGDwHHJmRd60MhIBh_er0897Q295dMzABb29NnvKYx4ybKB/s1600/5.1.1.webp",
+                    desc: "কাস্টমার সার্ভিস স্ট্র্যাটেজি তৈরি করে সাধারণ ক্রেতাদের দীর্ঘমেয়াদী বিশ্বস্ত ব্র্যান্ড প্রমোটারে পরিণত করা।",
+                    longDesc: "কাস্টমার রিলেশনশিপ বা CRM ডিজাইন ব্যবসার প্রাণ। ক্লায়েন্টের অভিযোগ দূর করা, সঠিক টোনে মেসেজের উত্তর দেওয়া এবং চমৎকার অফার শেয়ারিংয়ের মাধ্যমে কাস্টমারকে আজীবন আপনার ব্র্যান্ডের সাথে জড়িয়ে রাখার মেকানিজম নিয়ে কাজ করি।",
+                    features: ["কমিউনিকেশন স্ক্রিপ্ট", "অভিযোগ হ্যান্ডলিং গাইড", "রিপিট কাস্টমার ফানেল"]
+                },
+                {
+                    title: "Graphic & Motion Design",
+                    subtitle: "শিঘ্রই আসছে, ইনশাআল্লাহ",
+                    icon: "fa-solid fa-wand-magic-sparkles",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFWa5RKRw4yQndgtcDd99l8Cu0_7dlMZlXwDxo7sGLTIoyoKrkIew1CKmIYD5VvlDD0pIlOwr_wYPpMA2ObwwUCtQUC3ZEghVW90pUSRQ8Y7QLSnMSMqYH75jlaShZ_TMJUXouz49mPHl_3V8KwCQQxkiB3RTRYA_Lt_2Emaq62L2gRqcbS7qWWT6rd6WE/s1600/What-Does-a-Motion-Graphics-Designer-Do-and-How-to-Become-One.jpg",
+                    desc: "সোশ্যাল মিডিয়া পোস্টার, বিজ্ঞাপন, মোশন গ্রাফিক্স এবং হাই-ইম্প্যাক্ট ভিজ্যুয়াল এলিমেন্টস তৈরি।",
+                    longDesc: "এই সার্ভিসটি খুবই শীঘ্রই আমাদের প্ল্যাটফর্মে যুক্ত হতে যাচ্ছে। আমরা সোশ্যাল মিডিয়া ব্যানার, বিজ্ঞাপনের জন্য মোশন ব্যানার এবং আকর্ষণীয় প্রমো ভিডিও ডিজাইন করব যা ব্র্যান্ড ভিজিবিলিটি দ্বিগুণ করবে।",
+                    features: ["সোশ্যাল মিডিয়া গ্রাফিক্স", "অ্যানিমেটেড মোশন অ্যাডস", "প্রিমিয়াম ব্যানারস"]
+                },
+                {
+                    title: "3D Animation & Presentation",
+                    subtitle: "শিঘ্রই আসছে, ইনশাআল্লাহ",
+                    icon: "fa-solid fa-cube",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6IryhsL4uGB5GU6HsIsIPzPsbmshJYxigbAsFS7H4Vd_bHrSL7GGdny7YRUwwrykeqXHclBhzStCYxNlR3v0kgtL6dQvstIKHh9wPjI7eALSERIPf4SdocBATSkvXN8dJfvci3LBYQI7jApMtY5XqzoZQfdoYimrg8A6fdhldCvNH8yKzPUkU_DdB0PaY/s1600/27013837-geschaft-treffen-karikatur-illustration-im-ein-eben-stil-von-ein-gruppe-von-vielfaltig-menschen-fuhren-ein-diskussion-beim-ein-tabelle-in-der-nahe-von-ein-whiteboard-mit-diagramme-und-grafiken-isoliert-au.jpg",
+                    desc: "আধুনিক থ্রি-ডি পণ্য উপস্থাপনা ও কমার্শিয়াল অ্যানিমেশনের মাধ্যমে ব্র্যান্ডকে আরও চমৎকারভাবে তুলে ধরা।",
+                    longDesc: "প্রিমিয়াম 3D আর্টওয়ার্ক এবং প্রজেক্টের থ্রিডি প্রোডাক্ট অ্যানিমেশন আপনার পণ্যের কোয়ালিটি এবং লাক্সারি রূপ সবার সামনে হাইলাইট করবে। এটিও খুব শীঘ্রই চালু হতে যাচ্ছে।",
+                    features: ["3D প্রোডাক্ট মকআপ", "কমার্সিয়াল ভিজ্যুয়ালস", "হাইপার রিয়ালিস্টিক রেন্ডার"]
+                },
+                {
+                    title: "Website Planning & Development",
+                    subtitle: "আধুনিক ডিজিটাল ডোমেইন",
+                    icon: "fa-solid fa-globe",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_ZejuK8gEWCFtD293G0UJPVAbBEb4AH5YdGscshzo-Ac8WC2UYupoHxNhxYo_0He3CqGhtOnyWuiQ5oJDE6G7ylyBTDed40rShh4RVENgJ8BZbZvOOXwc7O3G287liY2f1s9MT_1YbeoBgmZx-D7OI085Ssk6AoSBR4I_2ZGz_oPw-_ROKnnTQG3uDgai/s1600/Dynamic-website-development-process-1-min-912x1024.webp",
+                    desc: "ইউজার ফ্রেন্ডলি এবং রেসপন্সিভ ল্যান্ডিং পেজ বা ফুল-স্ট্যাক ওয়েবসাইট তৈরি ও পরিকল্পনা করা।",
+                    longDesc: "লারাভেল, ওয়ার্ডপ্রেসের সমন্বয়ে আপনার বিজনেস প্ল্যাটফর্মটি টেকনিক্যালি স্ট্রং এবং কনভার্সন অপ্টিমাইজড করা হবে। যেন কাস্টমার এসে এক ক্লিকেই সহজেই তার কাঙ্ক্ষিত সেবাটি অর্ডার করতে পারেন।",
+                    features: ["মোবাইল ফ্রেন্ডলি ডিজাইন", "লাইটওয়েট কোড স্পিড", "অটোমেটেড ডাটা এন্ট্রি কানেকশন"]
+                },
+                {
+                    title: "AI Workflows Integration",
+                    subtitle: "কাজের গতি কয়েকগুণ বৃদ্ধি",
+                    icon: "fa-solid fa-brain",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGkP5a4EO-5obpn11GTED-2KtPemm5XMmTCHE2Nu32jP0_kqatH3CXGPSCwWT87hSMe59y-lQL8cxoeBICM6MdRmdaN6QCWGf8leNb3ZyYU6hhyIz6FNYpQafHdoS8rDtnzX-miFE_zzbV7NSNrO06aG7ItUEdkzfOwShDNYv3kl8sNfE3v4NkEMS-K87d/s1600/Is-An-AI-Workflow-400x225.jpg",
+                    desc: "কৃত্রিম বুদ্ধিমত্তা (AI) ব্যবহার করে কন্টেন্ট রাইটিং ও কাস্টমার রেসপন্স সিস্টেমকে ফাস্ট ও অপ্টিমাইজ করা।",
+                    longDesc: "এআই প্রযুক্তির ব্যবহার করে ব্যবসার রুটিন কাজগুলোকে সহজ করা। কম খরচে কীভাবে চ্যাটজিপিটি বা অন্যান্য আর্টিফিশিয়াল ইন্টেলিজেন্স টুল আপনার বিজনেসে কার্যকরভাবে প্রোডাক্টিভিটি বাড়াতে ব্যবহার করবেন তার দিকনির্দেশনা দেওয়া হবে।",
+                    features: ["এআই কন্টেন্ট ক্রিয়েশন ফানেল", "অটো চ্যাটবট রেসপন্স", "টাস্ক অটোমেশন"]
+                }
+            ],
+            roadmap: [
+                { title: "Idea", desc: "নতুন ধারণার সূচনা" },
+                { title: "Planning", desc: "বাস্তবসম্মত কর্মপরিকল্পনা" },
+                { title: "Brand Identity", desc: "প্রিমিয়াম ভিজ্যুয়াল পরিচয়" },
+                { title: "Content Strategy", desc: "সেলস ফানেল কন্টেন্ট" },
+                { title: "Marketing", desc: "টার্গেটেড ট্রাফিক আকর্ষণ" },
+                { title: "Customer Trust", desc: "সেরা কাস্টমার রিলেশন" },
+                { title: "Automation", desc: "সহজ ফ্রি অটোমেশন" },
+                { title: "Business Growth", desc: "ধাপে ধাপে সফল ব্র্যান্ড" }
+            ],
+            portfolio: [
+                {
+                    title: "কোরবানির ঈদে কম খরচে রেকর্ড পরিমাণ ছুরি-চাপাতি সেলস ক্যাম্পেইন",
+                    desc: "কোরবানির ঈদে হাজারো বিক্রেতার ভিড়ে খুবই কম বাজেটে টার্গেটেড কাস্টমারদের কাছে পৌঁছানো এবং দ্রুত ডেলিভারি নিশ্চিত করা।",
+                    issue: "সীমিত বিজ্ঞাপনী বাজেটে সঠিক ক্রেতাদের কাছে পোঁছানো এবং অন্যান্য বিক্রেতাদের তুলনায় দ্রুত কাস্টমার অ্যাকুইজিশন করা।",
+                    solution: "প্রোডাক্টের ধারালো মান, সরাসরি ডেমো ও কার্যকারিতা নিয়ে ছোট ছোট রিয়েলিস্টিক ভিডিও কনটেন্ট তৈরি করা হয় এবং একই সাথে হাইপার-লোকাল টার্গেটিংয়ের মাধ্যমে অ্যাড ক্যাম্পেইন চালানো হয়।",
+                    result: "অত্যন্ত সীমিত বাজেটে ক্যাম্পেইনটি চালিয়ে আমরা লক্ষ্যমাত্রার চেয়ে ১৫০%+ বেশি সেলস সফলভাবে জেনারেট করি।"
+                },
+                {
+                    title: "ওয়ান-স্টপ বিজনেস অটোমেশন ও সেন্ট্রালাইজড ড্যাশবোর্ড (Our Biggest Success!)",
+                    desc: "আমরা একটি বিশাল এবং জটিল ট্র্যাকিং ব্যবসাকে একটি সাধারণ, সাশ্রয়ী অথচ অত্যন্ত শক্তিশালী ড্যাশবোর্ডের আওতায় এনেছি।",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgXxx-RMHVtlUWZf-IxyFd3G1SAr2zk9ElkGNHgeXPxKkn1nwzNSHmvYa1wTsHL8W1nBqr-I49-Ef6u3EHQAVUs9SlLXylYl8YE4owpBkXJpME5ikPmWZH6aeYg9gLOzw4dhJjuLxRhWxNuwgLYBGiRXq694aLg11qOKYio8yvIXwjrzfAUEeA252UEoTe/s1600/Screenshot%202026-07-17%20021019.png",
+                    issue: "ম্যানুয়ালি দৈনিক সেলস, কাস্টমার ডেটা ও ইনভেন্টরির জটিল হিসাব রাখতে গিয়ে সময় অপচয় হওয়া এবং কোনো সেন্ট্রাল রিয়েল-টাইম ট্র্যাকিং সিস্টেম না থাকা।",
+                    solution: "দামি বা জটিল ইআরপি সফটওয়্যারের ঝামেলা এড়িয়ে গুগল শিট ও অ্যাপস স্ক্রিপ্টের সংযোগে ১০০% অটোমেটেড হাব-অ্যান্ড-স্পোক ড্যাশবোর্ড তৈরি করা হয়েছে।",
+                    result: "ব্যবসায়ের দৈনিক সেলস, স্টক ও লাভ-ক্ষতি মালিক এক ক্লিকেই রিয়েল-টাইম ড্যাশবোর্ড থেকে দেখতে পারছেন এবং পরিচালন খরচ এক ধাক্কায় ৮০% হ্রাস পেয়েছে।"
+                }
+            ],
+            blogs: [
+                {
+                    title: "১৯৫৪ সালের একটি ঘটনা, যা ব্যবসার সংজ্ঞাই বদলে দিয়েছিল",
+                    date: "জুলাই ১৭, ২০২৬",
+                    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkAfLXLKYz6nBrdfth1DUsf0nvk2QA1yb7xJ8eTrtAR3cw50Gbylm8JF30pyLQNIB2JNu1UafsL-w8hKHOW3QWwKK1dOSVdtJDFNksFb7eKXK2VK8OB-MW2XckGYB9DpJF4eSlCkfZEk0CC4y2TttsO0oZ75Ti6WpmUf3xs7aZq4nkdJCrfyma3wALW3Tf/s1600/749286924_1350651460505614_7729281869764316692_n.jpg",
+                    desc: "একটি ভালো পণ্য ব্যবসা শুরু করতে পারে, কিন্তু একটি শক্তিশালী সিস্টেম ব্যবসাকে বিশ্বজুড়ে নিয়ে যায়। Ray Kroc কীভাবে McDonald's ভাইদের ছোট্ট রেস্টুরেন্টকে রিয়েল এস্টেট ও ফ্র্যাঞ্চাইজি ডমিনেশনের গ্লোবাল আইকনে রূপান্তর করেছিলেন তা জেনে নিন...",
+                    content: `১৯৫৪ সাল। Ray Kroc তখন ৫২ বছর বয়সী একজন মিল্কশেক মেশিন সেলসম্যান। একদিন তিনি অবাক হয়ে দেখলেন, ক্যালিফোর্নিয়ার San Bernardino শহরের একটি ছোট রেস্টুরেন্ট একসঙ্গে ৮টি Multimixer অর্ডার করেছে। কৌতূহলী হয়ে তিনি নিজেই সেখানে ছুটে যান। সেখানে পরিচয় হয় দুই ভাই Richard "Dick" McDonald এবং Maurice "Mac" McDonald-এর সাথে।<br><br>
+                    তাদের রেস্টুরেন্টটি ছোট হলেও সেখানে ছিল <strong>Speedee Service System</strong>। প্রতিটি কর্মীর নির্দিষ্ট দায়িত্ব ছিল। পুরো প্রক্রিয়াটি এতটাই নিখুঁতভাবে সাজানো ছিল যে অর্ডার দেওয়ার ৩০ সেকেন্ডেই বার্গার প্রস্তুত হয়ে যেত! Ray Kroc বুঝে গেলেন— "তারা শুধু বার্গার বিক্রি করছে না, তারা একটি সিস্টেম তৈরি করেছে।"<br><br>
+                    ১৯৫৫ সালে তিনি নিজে ফ্র্যাঞ্চাইজি এজেন্ট হিসেবে কাজ শুরু করেন এবং প্রথম শাখা চালুর পর মান বজায় রাখার কঠোর নীতি গ্রহণ করেন। কিন্তু শুধু ফ্র্যাঞ্চাইজি কমিশন থেকে আয় বাড়ানো যাচ্ছিল না। তখন Harry J. Sonneborn তাকে পরামর্শ দেন— <strong>"তুমি বার্গারের ব্যবসায় নেই; তুমি রিয়েল এস্টেটের ব্যবসায় আছো।"</strong><br><br>
+                    এরপর Ray Kroc Franchise Realty Corporation গঠন করেন। নতুন শাখার জন্য জমি কিনে দীর্ঘমেয়াদে লিজ নিয়ে সেই জমি ফ্র্যাঞ্চাইজি মালিকদের ভাড়া দিতে শুরু করেন। এই একক সিদ্ধান্তে ব্যবসার মোড় ঘুরে যায়। ১৯৬১ সালে Ray Kroc সম্পূর্ণ অধিকার কিনে নিয়ে McDonald's-কে পৃথিবীর সফলতম চেইনে পরিণত করেন।<br><br>
+                    <strong>💡 এই ঘটনাটি আমাদের কী শেখায়?</strong><br>
+                    ১. <strong>সিস্টেমই শক্তি:</strong> ভালো প্রোডাক্ট হয়তো যাত্রা শুরু করায়, কিন্তু শক্তিশালী অটোমেটেড সিস্টেম ব্র্যান্ডকে বিশ্বজুড়ে ছড়ায়।<br>
+                    ২. <strong>মান ও ধারাবাহিকতা:</strong> গতি ও একই মান বজায় রাখাই বড় ব্র্যান্ডের মূল ভিত্তি।<br>
+                    ৩. <strong>ভিন্ন দৃষ্টিভঙ্গি:</strong> প্রথাগত চিন্তার বাইরে গিয়ে যেমন রিয়েল এস্টেটের অ্যাঙ্গেলে বার্গারের রেভিনিউ মডেল বের করা হয়েছিল, সেভাবে চিন্তা করাই আসল গেম-চেঞ্জার।`
+                },
+                {
+                    title: "পণ্য বনাম সিস্টেম (Product vs. System)",
+                    date: "জুলাই ১৫, ২০২৬",
+                    desc: "অধিকাংশ নতুন উদ্যোক্তা শুধু প্রোডাক্টের পেছনে সময় ব্যয় করেন। কিন্তু সত্যিটা হলো, একটি ভালো প্রোডাক্ট আপনাকে কিছু সেল এনে দিতে পারে, কিন্তু একটি শক্তিশালী সিস্টেম আপনার অনুপস্থিতিতেও লাভ এনে দেবে...",
+                    content: `অধিকাংশ উদ্যোক্তার প্রধান ভুল হলো তারা দিনরাত শুধু পণ্যের মানোন্নয়ন বা নতুন পণ্যের পেছনে ছোটেন। কিন্তু পণ্য হলো একটি ব্যবসার ফ্রন্ট-এন্ড। ব্যাক-এন্ডে যদি একটি মজবুত সিস্টেম কাজ না করে তবে ব্যবসা যেকোনো মুহূর্তে মুখ থুবড়ে পড়বে।<br><br>
+                    একটি আদর্শ বিজনেস সিস্টেম বলতে বোঝায় আপনার অবর্তমানেও যেন ব্যবসার প্রতিটি অপারেশন (ডেলিভারি ট্র্যাকিং, অ্যাকাউন্টস, কাস্টমার সার্ভিস ও মার্কেটিং ফানেল) সমান গতিতে ও নির্ভুলভাবে চলে। <br><br>
+                    <strong>আমরা কীভাবে এটি নিশ্চিত করি?</strong><br>
+                    গুগল শিট কিংবা এআই টুলের মতো স্বল্প বা সম্পূর্ণ বিনামূল্যের রিসোর্স সংযোগের মাধ্যমে ছোট ব্যবসাতেও এমনভাবে অটোমেশন সেট করা সম্ভব যা পুরো কাজকে মানুষের ভুলত্রুটিহীন একটি লাভজনক সেলস মেশিনে পরিণত করে।`
+                },
+                {
+                    title: "কাস্টমার ভ্যালু ইকুয়েশন (Value over Price)",
+                    date: "জুলাই ১০, ২০২৬",
+                    desc: "সস্তা দামে পণ্য বিক্রির প্রতিযোগিতা থেকে বের হয়ে এসে কীভাবে আপনার পণ্যের আসল 'ভ্যালু' বা সমস্যার বাস্তব সমাধান কাস্টমারের সামনে তুলে ধরে সঠিক লাভ নিশ্চিত করবেন তা জানুন...",
+                    content: `কাস্টমার কখনো বেশি দাম দিতে দ্বিধা করে না, যদি সে সেই মূল্যের চেয়ে বেশি "ভ্যালু" বা সমাধান আপনার কাছ থেকে লাভ করে। পণ্য সস্তায় বিক্রি করে কখনো স্থায়ী ব্র্যান্ড হওয়া যায় না। সস্তা বিক্রেতারা একে অপরের সাথে লড়াই করে এক সময় ব্যবসা বন্ধ করে দেয়।<br><br>
+                    আপনাকে ফোকাস করতে হবে কাস্টমারের জীবনের কোন বড় সমস্যার সমাধান আপনি আপনার পণ্য বা সেবার মাধ্যমে নিশ্চিত করছেন। যখন সেই সমস্যার সমাধান নিখুঁত হবে, তখন কাস্টমার দামের দিকে না তাকিয়ে আপনার পণ্যটি কিনতে ও বিশ্বাস করতে বাধ্য থাকবে।`
+                }
+            ],
+            resources: [
+                { 
+                    title: "📘 ২০টি আল্টিমেট অটোমেশন ফর্মুলা", 
+                    desc: "সময় এবং শ্রম বাঁচিয়ে আপনার ব্যবসাকে ২৪/৭ চালু রাখার গোপন মেকানিজম।", 
+                    motivation: "ব্যবসায়িক ব্যস্ততার চক্র থেকে নিজেকে মুক্ত করুন। সময় এবং শ্রম বাঁচিয়ে আপনার ব্যবসাকে ২৪/৭ সচল ও লাভজনক রাখার আসল অটোমেশন সিক্রেটগুলো জেনে নিন এক ক্লিকেই।",
+                    link: "#" 
+                },
+                { 
+                    title: "📗 হাই-কনভার্টিং কাস্টমার জার্নি ম্যাপ", 
+                    desc: "ভিজিটর থেকে লয়াল কাস্টমার— প্রতিটি ধাপের মনস্তাত্ত্বিক ফানেল ডিজাইন।", 
+                    motivation: "কাস্টমারের অবচেতন মনকে প্রভাবিত করার চাবিকাঠি! সাধারণ ভিজিটরকে কীভাবে ধাপে ধাপে আপনার ব্র্যান্ডের অন্ধ ভক্তে পরিণত করবেন—তার নিখুঁত মনস্তাত্ত্বিক ফানেল ডিজাইন আজই ডাউনলোড করুন।",
+                    link: "#" 
+                },
+                { 
+                    title: "📕 এআই টুলস চেকলিস্ট ফর স্মল বিজনেস", 
+                    desc: "কম খরচে বড় টিমের মতো প্রোডাক্টিভিটি পাওয়ার সেরা এআই টুলস ডিরেক্টরি।", 
+                    motivation: "কম বাজেটে কীভাবে একটি বড় মাল্টিন্যাশনাল টিমের মতো প্রোডাক্টিভিটি ও স্পিড পাবেন? আপনার ব্যবসার গতি ১০ গুণ বাড়িয়ে দিতে সেরা এআই টুলসের এই কমপ্লিট ডিরেক্টরি ডাউনলোড করুন।",
+                    link: "#" 
+                },
+                { 
+                    title: "📙 ব্র্যান্ডিং পিচ অ্যান্ড আইডেন্টিটি গাইডলাইন", 
+                    desc: "মার্কেটে নিজের একক আধিপত্য প্রতিষ্ঠার মূল ভিজ্যুয়াল স্ট্র্যাটেজি।", 
+                    motivation: "প্রতিযোগীদের পেছনে ফেলে কাস্টমারের মনে প্রথম স্থান দখল করুন। বাজারে নিজের একক আধিপত্য প্রতিষ্ঠার মূল ভিজ্যুয়াল ও ব্র্যান্ডিং স্ট্র্যাটেজি শিটটি সংগ্রহ করুন এখনই।",
+                    link: "#" 
+                }
+            ],
+            integrations: {
+                googleScriptUrl: "YOUR_GOOGLE_SCRIPT_WEB_APP_URL" 
+            }
+        };
+
+        // --- DOM তে ডাটা রেন্ডারিং প্রসেস ---
+        document.addEventListener("DOMContentLoaded", function() {
+            // ১. Cinematic Intro Fade Out (৪.৫ সেকেন্ড পর)
+            document.getElementById("intro-avatar").src = CONFIG.profile.avatar;
+            document.getElementById("about-avatar").src = CONFIG.profile.avatar;
+
+            setTimeout(() => {
+                const intro = document.getElementById("cinematic-intro");
+                const main = document.getElementById("main-content");
+                intro.style.opacity = '0';
+                main.classList.remove("opacity-0");
+                main.classList.add("opacity-100");
+                setTimeout(() => intro.style.display = 'none', 1000);
+            }, 4500);
+
+            // ২. সার্ভিসেস রেন্ডারিং (সবগুলো কার্ড ৩-কলাম গ্রিডে ইমেজ সহ)
+            const servicesContainer = document.getElementById("services-container");
+            CONFIG.services.forEach((service, index) => {
+                servicesContainer.innerHTML += `
+                    <div class="glass-card rounded-2xl overflow-hidden cursor-pointer reveal-up flex flex-col justify-between group" onclick="openServiceModal(${index})">
+                        <div class="relative h-48 w-full bg-[#05070c] overflow-hidden">
+                            <img src="${service.image}" alt="${service.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute top-4 left-4 w-10 h-10 rounded-xl bg-black/80 backdrop-blur-md flex items-center justify-center text-gold border border-white/5">
+                                <i class="${service.icon}"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <h3 class="text-lg font-bold text-white font-english">${service.title}</h3>
+                                <p class="text-xs text-gold uppercase tracking-wider font-semibold">${service.subtitle}</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">${service.desc}</p>
+                            </div>
+                            <div class="flex items-center text-xs text-gold font-medium gap-1 pt-4 border-t border-white/5 mt-4 group-hover:gap-2 transition-all">
+                                বিস্তারিত দেখুন <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            // ৩. রোডম্যাপ রেন্ডারিং
+            const roadmapContainer = document.getElementById("roadmap-container");
+            CONFIG.roadmap.forEach(step => {
+                roadmapContainer.innerHTML += `
+                    <div class="roadmap-step p-4 space-y-2">
+                        <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold mx-auto font-english font-bold text-sm bg-gold/5 shadow-md shadow-gold/5">
+                            ${step.title.charAt(0)}
+                        </div>
+                        <h4 class="text-sm font-bold text-white font-english mt-2">${step.title}</h4>
+                        <p class="text-[11px] text-slate-500">${step.desc}</p>
+                    </div>`;
+            });
+
+            // ৪. পোর্টফোলিও রেন্ডারিং (সাম্প্রতিক সফল প্রজেক্টসমূহ)
+            const portfolioContainer = document.getElementById("portfolio-container");
+            CONFIG.portfolio.forEach(item => {
+                portfolioContainer.innerHTML += `
+                    <div class="glass-card rounded-2xl overflow-hidden reveal-up flex flex-col justify-between">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover opacity-90 border-b border-white/5">` : ''}
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-[10px] bg-gold/10 border border-gold/20 text-gold font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Case Study</span>
+                                <h3 class="text-lg font-bold text-white leading-snug pt-2">${item.title}</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">${item.desc}</p>
+                            </div>
+                            
+                            <div class="space-y-3 pt-4 border-t border-white/5 text-xs text-slate-300">
+                                <p><strong class="text-gold">সমস্যা:</strong> ${item.issue}</p>
+                                <p><strong class="text-gold">সমাধান:</strong> ${item.solution}</p>
+                                <p><strong class="text-gold">ফলাফল:</strong> ${item.result}</p>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            // ৫. ব্লগ রেন্ডারিং
+            const blogContainer = document.getElementById("blog-container");
+            CONFIG.blogs.forEach((blog, index) => {
+                blogContainer.innerHTML += `
+                    <div class="glass-card rounded-2xl overflow-hidden reveal-up flex flex-col justify-between group">
+                        ${blog.image ? `<img src="${blog.image}" alt="${blog.title}" class="w-full h-48 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 border-b border-white/5">` : ''}
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-xs text-slate-500">${blog.date}</span>
+                                <h3 class="text-lg font-bold text-white leading-snug hover:text-gold cursor-pointer transition-colors" onclick="openBlogModal(${index})">${blog.title}</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed line-clamp-3">${blog.desc}</p>
+                            </div>
+                            <button onclick="openBlogModal(${index})" class="inline-flex items-center text-xs text-gold font-medium pt-4 border-t border-white/5 gap-1 hover:gap-2 transition-all mt-4 w-full justify-between">
+                                <span>পড়ুন</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>`;
+            });
+
+            // ৬. ফ্রি রিসোর্স রেন্ডারিং
+            const resourcesContainer = document.getElementById("resources-container");
+            CONFIG.resources.forEach(res => {
+                resourcesContainer.innerHTML += `
+                    <div class="glass-card rounded-xl p-5 text-center flex flex-col justify-between items-center space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold text-lg">
+                            <i class="fa-solid fa-circle-down"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-sm font-bold text-white font-english">${res.title}</h4>
+                            <p class="text-[10px] text-slate-400 leading-normal italic">"${res.motivation}"</p>
+                        </div>
+                        <a href="${res.link}" class="w-full bg-white/5 hover:bg-gold text-white hover:text-black border border-white/10 text-xs py-2 rounded-lg font-semibold transition-all">
+                            ডাউনলোড করুন
+                        </a>
+                    </div>`;
+            });
+
+            // ৭. কন্টাক্ট চ্যানেল রেন্ডারিং (WhatsApp, Messenger, Facebook, Email)
+            const channelsContainer = document.getElementById("contact-channels");
+            channelsContainer.innerHTML = `
+                <a href="mailto:${CONFIG.profile.email}" class="flex items-center gap-4 bg-white/5 hover:bg-white/10 p-4 rounded-xl border border-white/5 transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 text-xl"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4 class="text-xs text-slate-400 font-semibold uppercase font-english">Email Address</h4>
+                        <p class="text-white text-xs font-medium">${CONFIG.profile.email}</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/${CONFIG.profile.whatsapp}" target="_blank" class="flex items-center gap-4 bg-white/5 hover:bg-white/10 p-4 rounded-xl border border-white/5 transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <h4 class="text-xs text-slate-400 font-semibold uppercase font-english">WhatsApp</h4>
+                        <p class="text-white text-xs font-medium">${CONFIG.profile.whatsapp}</p>
+                    </div>
+                </a>
+                <a href="${CONFIG.profile.facebookUrl}" target="_blank" class="flex items-center gap-4 bg-white/5 hover:bg-white/10 p-4 rounded-xl border border-white/5 transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div>
+                        <h4 class="text-xs text-slate-400 font-semibold uppercase font-english">Facebook</h4>
+                        <p class="text-white text-xs font-medium">MD.Arafat Hasan</p>
+                    </div>
+                </a>
+                <a href="${CONFIG.profile.messengerUrl}" target="_blank" class="flex items-center gap-4 bg-white/5 hover:bg-white/10 p-4 rounded-xl border border-white/5 transition-all">
+                    <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl"><i class="fa-brands fa-facebook-messenger"></i></div>
+                    <div>
+                        <h4 class="text-xs text-slate-400 font-semibold uppercase font-english">Messenger</h4>
+                        <p class="text-white text-xs font-medium">MD.Arafat Hasan</p>
+                    </div>
+                </a>
+            `;
+
+            // Scroll Reveal ইনিশিয়ালাইজেশন
+            ScrollReveal({
+                origin: 'y',
+                distance: '40px',
+                duration: 1200,
+                delay: 200,
+                reset: false
+            });
+            ScrollReveal().reveal('.reveal-up', { delay: 100 });
+            ScrollReveal().reveal('.reveal-left', { origin: 'left', delay: 100 });
+            ScrollReveal().reveal('.reveal-right', { origin: 'right', delay: 100 });
+        });
+
+        // মোবাইল নেভিগেশন টগল
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+        });
+
+        // --- সার্ভিসেস পপআপ/মোডাল লজিক ---
+        function openServiceModal(index) {
+            const service = CONFIG.services[index];
+            document.getElementById("modal-title").innerText = service.title;
+            document.getElementById("modal-desc").innerText = service.longDesc;
+            
+            const detailsBox = document.getElementById("modal-details");
+            detailsBox.innerHTML = `<h5 class="font-bold text-white text-sm mb-2">সেবার প্রধান ফিচারসমূহ:</h5>`;
+            service.features.forEach(feat => {
+                detailsBox.innerHTML += `<p class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> ${feat}</p>`;
+            });
+
+            const modal = document.getElementById("service-modal");
+            modal.classList.remove("opacity-0", "pointer-events-none");
+            modal.querySelector('.glass-card').classList.remove("scale-95");
+            modal.querySelector('.glass-card').classList.add("scale-100");
+            document.body.classList.add("modal-active");
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("service-modal");
+            modal.classList.add("opacity-0", "pointer-events-none");
+            modal.querySelector('.glass-card').classList.add("scale-95");
+            modal.querySelector('.glass-card').classList.remove("scale-100");
+            document.body.classList.remove("modal-active");
+        }
+
+        document.getElementById("close-modal-btn").addEventListener("click", closeModal);
+        document.querySelector(".modal-overlay").addEventListener("click", closeModal);
+        document.getElementById("modal-cta-btn").addEventListener("click", closeModal);
+
+        // --- ব্লগ পপআপ/মোডাল লজিক ---
+        function openBlogModal(index) {
+            const blog = CONFIG.blogs[index];
+            document.getElementById("blog-modal-title").innerText = blog.title;
+            
+            const bodyBox = document.getElementById("blog-modal-body");
+            bodyBox.innerHTML = `
+                ${blog.image ? `<img src="${blog.image}" class="w-full h-56 object-cover rounded-xl mb-4 border border-white/5 shadow-lg">` : ''}
+                <div class="text-slate-500 text-xs mb-2">${blog.date}</div>
+                <div class="text-slate-300 space-y-4 text-xs sm:text-sm leading-relaxed">${blog.content}</div>
+            `;
+
+            const modal = document.getElementById("blog-modal");
+            modal.classList.remove("opacity-0", "pointer-events-none");
+            modal.querySelector('.glass-card').classList.remove("scale-95");
+            modal.querySelector('.glass-card').classList.add("scale-100");
+            document.body.classList.add("modal-active");
+        }
+
+        function closeBlogModal() {
+            const modal = document.getElementById("blog-modal");
+            modal.classList.add("opacity-0", "pointer-events-none");
+            modal.querySelector('.glass-card').classList.add("scale-95");
+            modal.querySelector('.glass-card').classList.remove("scale-100");
+            document.body.classList.remove("modal-active");
+        }
+
+        document.getElementById("close-blog-modal-btn").addEventListener("click", closeBlogModal);
+        document.querySelector(".blog-modal-overlay").addEventListener("click", closeBlogModal);
+        document.getElementById("close-blog-modal-footer-btn").addEventListener("click", closeBlogModal);
+
+       // --- কন্টাক্ট ফর্ম সাবমিশন এবং গুগল শিট এপিআই ---
+        document.getElementById("contact-form").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById("submit-btn");
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>মেসেজ পাঠানো হচ্ছে...</span> <i class="fa-solid fa-spinner animate-spin"></i>`;
+
+            const name = document.getElementById("form-name").value;
+            const phone = document.getElementById("form-phone").value;
+            const email = document.getElementById("form-email").value;
+            const message = document.getElementById("form-message").value;
+
+            if(CONFIG.integrations.googleScriptUrl !== "https://script.google.com/macros/s/AKfycbxNgVq9mmMNym_IKVzGaO-1WZRMGUpQrc-oS1IUoRgdpACr-_aeFqZwhlVuMcZZmJfVwQ/exec") {
+                try {
+                    // ডেটা অবজেক্ট তৈরি
+                    const payload = new URLSearchParams();
+                    payload.append("name", name);
+                    payload.append("phone", phone);
+                    payload.append("email", email);
+                    payload.append("message", message);
+
+                    // ডেটা পাঠানো
+                    await fetch(CONFIG.integrations.googleScriptUrl, {
+                        method: 'POST',
+                        mode: 'no-cors', // ব্রাউজার সিকিউরিটি বাইপাস করার জন্য
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: payload
+                    });
+                    
+                    alert("ধন্যবাদ! আপনার মেসেজটি সফলভাবে গুগল শিটে জমা হয়েছে।");
+                    document.getElementById("contact-form").reset();
+                } catch(err) {
+                    console.error("গুগল শিটে ডেটা জমা ব্যর্থ হয়েছে", err);
+                    alert("দুঃখিত, গুগল শিটে ডেটা সাবমিট করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।");
+                }
+            } else {
+                alert("টেস্টিং সাবমিশন সফল হয়েছে! (আপনার গুগল শিট স্ক্রিপ্ট লিঙ্ক সেট করতে স্ক্রিপ্টের নিচে googleScriptUrl পরিবর্তন করুন)");
+                document.getElementById("contact-form").reset();
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>মেসেজ সাবমিট করুন</span> <i class="fa-solid fa-paper-plane text-xs"></i>`;
+        });
+    </script>
+</body>
+</html>
